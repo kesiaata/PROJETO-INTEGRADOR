@@ -1,0 +1,69 @@
+PROJETO INTEGRADOR
+
+- Grupos: Divisão 
+-- Definição de Temas 
+	- nome: ???
+	- sobre: Educação infantil 
+-- Tema  alternativo
+	- diario virtual  
+-- Projeto Desktop e Web
+
+- Documentação inicial:
+
+-- Descrição do Projeto
+	- Pagina/ site para ajudar no desenvolvimento/educação infantil 
+	
+	Este projeto esta sendo desenvolvido a fim de ajudar as crianças, apresentando 
+	uma forma de educação mais dinâmica e interessante pra elas.
+	O software vai auxiliar nas dificuldades (de socializaçao/educação) e ter um amparo
+	para não ser totalmente necessário a ajuda de um responsável.
+	Será desenvolvido de uma forma mais atrativa para a criança, apresentando um 
+	amiguinho virtual, que vai ter as mesmas dificuldades dele, mostrando que não está só.
+	O amiguinho dele vai estar junto com ele no crescimento, o objetivo é que os dois cresçam 
+	e aprendam juntos. Caso a criança apresente algum sentimento reeprendido dentro dele, 
+	ou alguma evolução na "dificuldade", o responsavel vai receber um relatorio 
+	sobre isso via whatsapp.
+	
+	No inicio da pagina vai ter uma breve apresentação do que o site vai oferecer e na 
+	parte superior o ícone de cadastro ou login , caso o indivíduo não esteja cadastrado 
+	vai abrir outra pagina la ele vai poder se cadastrar, onde vai ter que preencher alguns dados 
+	sobre ele e sobre a criança.
+	A criança será direcionada a criar o avatar que o auxiliará no decorrer do estudo. Em seguida o 
+	avatar fará umas perguntas, com base nisso o site vai direcionar-lo para um video apresentando 
+	a página e mostrando o que ele vai encontrar lá. Depois ele vai ser liberado 
+	para descobrir o que o site oferece. Mas as aulas estarão privadas, sem acesso.
+	No segundo acesso á pagina o cronograma já estará pronto.
+	O cronograma terá apenas 3 a 4 matérias colocando enfase nas materias que ele tem mais dificuldade
+	ao clicar na primeira materia ira direcionalo para links para aula, e depois ele tera uma 
+	pequena prova, para saber se ele  realmente aprendeu, caso tenha tirado uma nota menor que 4
+	ele ira fazer a mesma aula no sabado.  
+	
+
+
+
+
+
+
+o app vai recompensar ele com skins novas para o avatar, mas so se ele estudar tudo direitinho, e tiver uma nota maxima 
+1 moeda = a baixo de 5 
+2 moedas = 5 a 6 
+3 moedas = 7 a 8 
+6 moedas = 9 
+8 moedas = 10 
+ e se estudar toda a semana sem falta vai ser recompensado com mais moedas
+
+
+	
+	
+	
+	
+	
+-- Motivação
+	- A falta de foco no aprendizado da criança e no 
+	  auxilio de um responsavel para ajudar 
+-- Problema que resolve
+	- o conflito entre o educador e a criança para ensinar
+	- a dificuldade da criança no aprendizado e na socialização
+
+- Modelagem inicial de banco de dados
+- Mockups
