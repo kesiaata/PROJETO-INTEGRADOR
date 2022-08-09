@@ -1,4 +1,4 @@
-PROJETO INTEGRADOR
+							PROJETO INTEGRADOR
 
 - Grupos: Divisão 
 -- Definição de Temas 
@@ -54,9 +54,8 @@ o app vai recompensar ele com skins novas para o avatar, mas so se ele estudar t
 
 
 	
-	
-	
-	
+.
+
 	
 -- Motivação
 	- A falta de foco no aprendizado da criança e no 
@@ -67,3 +66,87 @@ o app vai recompensar ele com skins novas para o avatar, mas so se ele estudar t
 
 - Modelagem inicial de banco de dados
 - Mockups
+
+
+
+
+
+
+CREATE DATABASE educacao;
+
+USE educacao;
+
+CREATE TABLE tab_responsaveis(
+	id_responsavel INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	fone VARCHAR(15) NOT NULL,
+	cpf VARCHAR(11) NULL,
+	sexo_criança VARCHAR (50) NOT NULL
+);
+
+CREATE TABLE tab_usuarios(
+	id_usuario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_responsavel INT NOT NULL,
+	nome VARCHAR(50) NOT NULL,
+	idade DATE NOT NULL,
+	sexo VARCHAR (50) NOT NULL,
+	materia_dificuldade VARCHAR (50) NOT NULL,
+	ano_letivo VARCHAR (10) NOT NULL,
+	CONSTRAINT fk_id_responsavel  FOREIGN KEY (id_responsavel) REFERENCES tab_responsaveis(id_responsavel)
+);
+CREATE TABLE tab_materias(
+	id_materia INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_usuario INT NOT NULL,
+	nome_materia VARCHAR(50) NOT NULL,
+	CONSTRAINT fk_id_usuario  FOREIGN KEY (id_usuario) REFERENCES tab_usuarios(id_usuario)
+);
+
+CREATE TABLE tab_humores(
+	id_humor INT NOT NULL PRIMARY KEY  AUTO_INCREMENT,
+	id_avatar INT NOT NULL,
+	nome_humor VARCHAR (50)  NOT NULL,
+	CONSTRAINT fk_id_avatar  FOREIGN KEY (id_avatar) REFERENCES tab_avatares(id_avatar)
+);
+
+CREATE TABLE tab_roupas(
+	id_roupa INT NOT NULL PRIMARY KEY  AUTO_INCREMENT,
+	id_avatar INT NOT NULL,
+	nome_acessorio VARCHAR (50) NOT NULL,
+	CONSTRAINT fk_id_avatar  FOREIGN KEY (id_avatar) REFERENCES tab_avatares(id_avatar)
+);
+
+CREATE TABLE tab_avatars(
+	id_avatar  INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_humor INT NOT NULL,
+	id_roupa INT NOT NULL,
+	id_responsavel INT NOT NULL,
+	id_usuario INT NOT NULL,
+	id_materia  INT NOT NULL,
+	nome_avatar VARCHAR (50) NOT NULL,
+	CONSTRAINT fk_id_humor  FOREIGN KEY (id_humor) REFERENCES tab_humores(id_humor),
+	CONSTRAINT fk_id_roupa  FOREIGN KEY (id_roupa) REFERENCES tab_roupas(id_roupa),
+	CONSTRAINT fk_id_responsavel  FOREIGN KEY (id_responsavel) REFERENCES tab_responsaveis(id_responsavel),
+	CONSTRAINT fk_id_usuario  FOREIGN KEY (id_usuario) REFERENCES tab_usuarios(id_usuario),
+	CONSTRAINT fk_id__materia  FOREIGN KEY (id__materia) REFERENCES tab__materias(id__materia)
+);
+
+CREATE TABLE tab_cronogramas(
+	id_cronograma   INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_materia  INT NOT NULL,
+	id_usuario INT NOT NULL,
+	id_avatar  INT NOT NULL,
+	CONSTRAINT fk_id_avatar  FOREIGN KEY (id_avatar) REFERENCES tab_avatares(id_avatar),
+	CONSTRAINT fk_id_usuario  FOREIGN KEY (id_usuario) REFERENCES tab_usuarios(id_usuario),
+	CONSTRAINT fk_id__materia  FOREIGN KEY (id__materia) REFERENCES tab__materias(id__materia)
+);
+
+CREATE TABLE tab_links
+	id_link   INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_materia  INT NOT NULL,
+	id_cronograma   INT NOT NULL,
+	link_video_aula VARCHAR (50) NOT NULL,
+	link_exercicio VARCHAR (50) NOT NULL,
+	CONSTRAINT fk_id_cronograma  FOREIGN KEY (id_cronograma) REFERENCES tab_cronogramas(id_cronograma),
+	CONSTRAINT fk_id__materia  FOREIGN KEY (id__materia) REFERENCES tab__materias(id__materia)
+);
