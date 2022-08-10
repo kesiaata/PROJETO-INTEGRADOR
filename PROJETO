@@ -94,6 +94,20 @@ CREATE TABLE tab_alunos(
 	materia_dificuldade VARCHAR (50) NOT NULL,
 	CONSTRAINT fk_id_responsavel  FOREIGN KEY (id_responsavel) REFERENCES tab_responsaveis(id_responsavel)
 );
+
+CREATE TABLE tab_avatars(
+	id_avatar  INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_aluno  INT NOT NULL,
+	nome VARCHAR(50) NOT NULL,
+	cor VARCHAR(50) NOT NULL,
+	cabelo VARCHAR(50) NOT NULL,
+	acessorio VARCHAR(50) NOT NULL,
+	blusa VARCHAR(50) NOT NULL,
+	calças VARCHAR(50) NOT NULL,
+	sapatos VARCHAR(50) NOT NULL,
+	CONSTRAINT fk_id_aluno  FOREIGN KEY (id_aluno) REFERENCES tab_alunos(id_aluno)
+);
+
 CREATE TABLE tab_materias(
 	id_materia INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	nome_materia VARCHAR(50) NOT NULL,
@@ -129,10 +143,17 @@ CREATE TABLE tab_respostas(
 	resposta 1 VARCHAR(50) NOT NULL,
 	resposta 2 VARCHAR(50) NOT NULL,
 	resposta 3 VARCHAR(50) NOT NULL,
-	resposta 3 VARCHAR(50) NOT NULL,
+	resposta 4 VARCHAR(50) NOT NULL,
 	CONSTRAINT fk_id_pergunta  FOREIGN KEY (id_pergunta) REFERENCES tab_perguntas(id_pergunta)
 );
-CREATE TABLE tab_acerto_erros(
+
+CREATE TABLE tab_perguntas_videos(
+	id_pergunta_video INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_link INT NOT NULL,
+	pergunta_video VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE tab_acertos_erros(
 	id_ac INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	id_aluno INT NOT NULL,
 	id_materia INT NOT NULL,
@@ -141,9 +162,11 @@ CREATE TABLE tab_acerto_erros(
 	CONSTRAINT fk_id_aluno  FOREIGN KEY (id_aluno) REFERENCES tab_alunos(id_aluno),
 	CONSTRAINT fk_id__materia  FOREIGN KEY (id__materia) REFERENCES tab__materias(id__materia)
 );
+
 CREATE TABLE tb_erros(
 	id_erro  INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	id_pergunta  INT NOT NULL,
+	erros VARCHAR(50) NOT NULL,
 	CONSTRAINT fk_id_pergunta  FOREIGN KEY (id_pergunta) REFERENCES tab_perguntas(id_pergunta)
 );
 
