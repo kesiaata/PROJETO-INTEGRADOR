@@ -119,7 +119,7 @@ CREATE TABLE tab_cronogramas(
 	id_aluno INT NOT NULL,
 	cronograma VACHAR(50) NOT NULL,
 	CONSTRAINT fk_id_aluno  FOREIGN KEY (id_aluno) REFERENCES tab_alunos(id_aluno),
-	CONSTRAINT fk_id__materia  FOREIGN KEY (id__materia) REFERENCES tab__materias(id__materia)
+	CONSTRAINT fk_id_materia  FOREIGN KEY (id_materia) REFERENCES tab_materias(id_materia)
 );
 
 CREATE TABLE tab_links
@@ -160,10 +160,10 @@ CREATE TABLE tab_acertos_erros(
 	certas VARCHAR(50) NOT NULL,
 	erradas VARCHAR(50) NOT NULL,
 	CONSTRAINT fk_id_aluno  FOREIGN KEY (id_aluno) REFERENCES tab_alunos(id_aluno),
-	CONSTRAINT fk_id__materia  FOREIGN KEY (id__materia) REFERENCES tab__materias(id__materia)
+	CONSTRAINT fk_id_materia  FOREIGN KEY (id_materia) REFERENCES tab_materias(id_materia)
 );
 
-CREATE TABLE tb_erros(
+CREATE TABLE tab_erros(
 	id_erro  INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	id_pergunta  INT NOT NULL,
 	erros VARCHAR(50) NOT NULL,
